@@ -17,6 +17,8 @@ RUN go build -o transcode-daemon
 # Final stage
 FROM --platform=$TARGETPLATFORM linuxserver/ffmpeg:8.0-cli-ls44
 
+LABEL author="Matthew Davis <public@mhwdvs.com>"
+
 # Set the working directory
 WORKDIR /app
 
