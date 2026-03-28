@@ -8,6 +8,22 @@ Transcode Daemon watches an input tree and mirrors it into an output tree:
 
 The daemon preserves relative directory structure from input to output.
 
+## Usage
+
+You can run Transcode Daemon using the Docker container image published to `ghcr.io/mhwdvs/transcode-daemon:latest`.
+
+Example `docker-compose.yml` service definition:
+
+```yaml
+transcode-daemon:
+    container_name: transcode-daemon
+    image: ghcr.io/mhwdvs/transcode-daemon:latest
+    volumes:
+      - local/path/to/your/input:/input
+      - local/path/to/your/output:/output
+    command: ["-input", "/input", "-output", "/output"]
+```
+
 ## CLI flags
 
 - `-input` (default `./input`): input root directory
